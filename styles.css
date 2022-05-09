@@ -8,3 +8,7 @@
 .item {
     background: gray;
 }
+
+.hover {
+    background: goldenrod;
+}
