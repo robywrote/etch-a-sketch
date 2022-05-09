@@ -1,0 +1,10 @@
+#grid-container {
+    display: grid;  
+    grid-template-columns: 10rem 10rem;
+    grid-template-rows: 10rem 10rem;
+    gap: 5px;
+}
+
+.item {
+    background: gray;
+}
