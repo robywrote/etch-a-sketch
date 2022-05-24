@@ -1,7 +1,10 @@
 'use strict'
 
-const button = document.querySelector('button')
-button.addEventListener('click', doOnClick)
+const newButton = document.querySelector('#new-grid')
+newButton.addEventListener('click', doOnClick)
+
+const clearButton = document.querySelector('#clear-grid')
+clearButton.addEventListener('click', clearGrid)
 
 function buildGrid(squares) {
     for (let i=0; i < squares; i++) {
@@ -19,6 +22,14 @@ function removeGrid() {
 
     items.forEach(e => e.remove())
     hovers.forEach(e => e.remove())
+}
+
+function clearGrid() {
+    let hovers = document.querySelectorAll('.hover')
+    hovers.forEach(e => { 
+        e.classList.remove('hover')
+        e.classList.add('item')
+    })
 }
 
 function doOnMouseover(e) {
