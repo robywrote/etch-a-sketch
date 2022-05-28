@@ -6,6 +6,12 @@ newButton.addEventListener('click', newGrid)
 const clearButton = document.querySelector('#clear-grid')
 clearButton.addEventListener('click', clearGrid)
 
+const colors = ['darkcyan', 'cornflowerblue', 'lightseagreen', 'orange']
+
+function pickColor(max) {
+    return colors[Math.floor(Math.random() * max)]
+}
+
 function buildGrid(squares) {
     for (let i=0; i < squares; i++) {
         const gridContainer = document.getElementById('grid-container')
@@ -27,6 +33,7 @@ function removeGrid() {
 function clearGrid() {
     let hovers = document.querySelectorAll('.hover')
     hovers.forEach(e => { 
+        e.style.background = 'lightgray'
         e.classList.remove('hover')
         e.classList.add('item')
     })
@@ -34,6 +41,7 @@ function clearGrid() {
 
 function doOnMouseover(e) {
     const item = e.target
+    item.style.background = pickColor(colors.length)
     item.classList.remove('item')
     item.classList.add('hover')
 }
