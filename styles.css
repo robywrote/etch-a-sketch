@@ -1,8 +1,13 @@
 #grid-container {
     display: grid;  
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1rem 1rem;
+    grid-auto-rows: 1rem;
+    /*
     grid-template-columns: repeat(auto-fill, 1rem);
     grid-template-rows: repeat(auto-fill, 1rem);
     grid-auto-rows: 1rem;
+    */
     gap: 1px;    
     
 }

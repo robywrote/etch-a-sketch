@@ -1,7 +1,7 @@
 'use strict'
 
 const newButton = document.querySelector('#new-grid')
-newButton.addEventListener('click', doOnClick)
+newButton.addEventListener('click', newGrid)
 
 const clearButton = document.querySelector('#clear-grid')
 clearButton.addEventListener('click', clearGrid)
@@ -38,10 +38,12 @@ function doOnMouseover(e) {
     item.classList.add('hover')
 }
 
-function doOnClick(e) {
+function newGrid(e) {
+    let gridSquares = prompt('How many grid squares do you want?')
+    if (gridSquares === null) {
+        return //break out of the function early
+    }
     removeGrid()
-    let gridDimension = prompt('How many grid columns do you want?')
-    let gridSquares = gridDimension * gridDimension
     buildGrid(gridSquares)
   }
 
